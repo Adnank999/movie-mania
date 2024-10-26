@@ -51,7 +51,7 @@ const PopularMovies: React.FC = () => {
   const observer = useRef<IntersectionObserver | null>(null);
 
   const lastMovieElementRef = useCallback(
-    (node) => {
+    (node: HTMLDivElement | null) => {
       if (isFetching || isSearchFetching) return;
       if (observer.current) observer.current.disconnect();
 
@@ -102,31 +102,7 @@ const PopularMovies: React.FC = () => {
   if (error) return <div>Error loading movies.</div>;
 
   return (
-    // <div className="container mx-auto p-4">
-    //   <h1 className="text-2xl font-bold mb-4 text-center ">Popular Movies</h1>
-
-    //   <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-    //     {movies.map((movie, index) => {
-    //       if (movies.length === index + 1) {
-    //         return (
-    //           <div ref={lastMovieElementRef} key={movie.id}>
-    //             <MovieCard movie={movie} section={searchTerm ? 'searchResults' : 'popularMovies'} />
-    //           </div>
-    //         );
-    //       } else {
-    //         return (
-    //           <MovieCard
-    //             key={movie.id}
-    //             movie={movie}
-    //             section={searchTerm ? 'searchResults' : 'popularMovies'}
-    //           />
-    //         );
-    //       }
-    //     })}
-    //   </div>
-
-    //   {(isFetching || isSearchFetching) && <div>Loading more movies...</div>}
-    // </div>
+   
 
     <div className="container mx-auto p-4">
     <h1 className="text-2xl font-bold mb-4 text-center ">Popular Movies</h1>
