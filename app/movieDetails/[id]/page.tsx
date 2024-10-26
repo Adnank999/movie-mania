@@ -18,7 +18,8 @@ export default async function MovieDetails({ params }: Props) {
         Accept: "application/json",
         Authorization: `Bearer ${process.env.NEXT_PUBLIC_API_KEY}`,
       },
-      next: { revalidate: 60 },
+      cache: "force-cache",
+      // next: { revalidate: 60 }, /* Here only one  must be used either force-cache or revalidate,since data doesnt change Frequently we can cache the data */
     }
   );
   const movieDetails = await response.json();
