@@ -9,7 +9,7 @@ const Loader = () => {
         className="player"
         loop={true}
         autoplay={true}
-        style={{ height: "100px", width: "100px" }}
+        style={{ height: "500px", width: "500px" }}
       />
     </div>
   );
