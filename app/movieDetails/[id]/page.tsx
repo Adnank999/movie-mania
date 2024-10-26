@@ -16,7 +16,7 @@ export default async function MovieDetails({ params }: Props) {
       method: "GET",
       headers: {
         Accept: "application/json",
-        Authorization: `Bearer ${process.env.NEXT_API_KEY}`,
+        Authorization: `Bearer ${process.env.NEXT_PUBLIC_API_KEY}`,
       },
       next: { revalidate: 60 },
     }
@@ -31,7 +31,7 @@ export default async function MovieDetails({ params }: Props) {
       method: "GET",
       headers: {
         Accept: "application/json",
-        Authorization: `Bearer ${process.env.NEXT_API_KEY}`,
+        Authorization: `Bearer ${process.env.NEXT_PUBLIC_API_KEY}`,
       },
       next: { revalidate: 60 },
     }

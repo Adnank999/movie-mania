@@ -12,16 +12,27 @@ export const apiSlice = createApi({
 
         
 
-        prepareHeaders: (headers, { getState }) => {
-            const token = process.env.NEXT_API_KEY
+        // prepareHeaders: (headers, { getState }) => {
+        //     const token = process.env.NEXT_PUBLIC_API_KEY
+        //     if (token) {
+        //         headers.set("Authorization", `Bearer ${token}`);
+        //     }
+        //     return headers;
+        // }
+
+        prepareHeaders: (headers) => {
+            const token = process.env.NEXT_PUBLIC_API_KEY;
             if (token) {
                 headers.set("Authorization", `Bearer ${token}`);
+            } else {
+             
+                throw new Error("Authorization token is required");
             }
             return headers;
-        }
+        },
     }),
     tagTypes: [
-        "RestaurantSpecificUserData",
+        "",
         
     ],
     endpoints: () => ({})
