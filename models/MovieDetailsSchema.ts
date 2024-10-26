@@ -37,7 +37,7 @@ export const MovieDetailsSchema = z.object({
   belongs_to_collection: BelongsToCollectionSchema.nullable(),
   budget: z.number(),
   genres: z.array(GenreSchema),
-  homepage: z.string().url().nullable(),
+  homepage: z.string().url().or(z.literal("")).nullable(),
   id: z.number(),
   imdb_id: z.string().nullable(),
   origin_country: z.array(z.string()),
