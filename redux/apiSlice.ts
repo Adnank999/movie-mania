@@ -13,7 +13,7 @@ export const apiSlice = createApi({
         
 
         prepareHeaders: (headers, { getState }) => {
-            const token = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwM2FhNjAyMmM0YWZiOTY1ODRjYzJhNjEyNWFjMWMxNiIsIm5iZiI6MTcyOTcxMTg2OS4xNDc0ODgsInN1YiI6IjY3MTk0ZDYzZTgzM2Q5MmVmMDVmYmZiOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.0h6iVBLJ1iuihvuUQgsWeOwDstRhazrlFaGzsHqmWuw"
+            const token = process.env.NEXT_API_KEY
             if (token) {
                 headers.set("Authorization", `Bearer ${token}`);
             }
