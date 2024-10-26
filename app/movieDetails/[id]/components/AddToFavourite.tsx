@@ -5,6 +5,7 @@ import { addMovieToCookies, deleteMovieFromCookies } from "./MovieDetailsCard";
 import { useDispatch, useSelector } from "react-redux";
 import { setFavourite, toggleFavourite } from "@/redux/movie/favouritesSlice";
 import { MovieDetails } from "@/models/MovieDetails";
+import { RootState } from "@/redux/store";
 
 interface Props{
   movieDetails: MovieDetails
@@ -15,7 +16,7 @@ const AddToFavourite = ({ movieDetails, id }:Props) => {
   
   
   const dispatch = useDispatch();
-  const isFavourite = useSelector((state) => state.favourites.favourites[id] || false);
+  const isFavourite = useSelector((state:RootState) => state.favourites.favourites[id] || false);
 
   const handleAddToFavourite = () => {
     addMovieToCookies(movieDetails,id);
